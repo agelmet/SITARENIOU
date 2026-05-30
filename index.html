@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="el" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Μαρίνα Σιταρένιου | Ψυχολόγος - Σχεσιακή Ψυχοθεραπεία Καλλιθέα</title>
+    <meta name="description" content="Η Μαρίνα Σιταρένιου είναι Ψυχολόγος με εξειδίκευση στη Σχεσιακή και Ομαδική Ψυχοθεραπεία. Ιδιωτικό γραφείο στην Καλλιθέα Αθηνών για ενήλικες, ζευγάρια και ομάδες.">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="https://github.com/agelmet/SITARENIOU/blob/main/new_logo_marina-01%20(1).png?raw=true" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            hint: '#BFCFBB',
+                            mint: '#BFCFBB', // Used identically to hint as per prompt constraints
+                            core: '#8EA58C',
+                            moss: '#738A6E',
+                            evergreen: '#344C3D',
+                            beige: '#EBE5D9', // Warm beige for decorative elements
+                            darkbeige: '#D8CDBA'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(52, 76, 61, 0.08)',
+                        'soft': '0 20px 40px -15px rgba(52, 76, 61, 0.1)',
+                        'card': '0 10px 30px -10px rgba(115, 138, 110, 0.15)',
+                    },
+                    animation: {
+                        'marquee': 'marquee 50s linear infinite',
+                        'float': 'float 8s ease-in-out infinite',
+                        'morph': 'morph 12s ease-in-out infinite both alternate',
+                        'morph-reverse': 'morph 15s ease-in-out infinite both alternate-reverse',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+                        },
+                        morph: {
+                            '0%': { borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' },
+                            '34%': { borderRadius: '70% 30% 50% 50% / 30% 30% 70% 70%' },
+                            '67%': { borderRadius: '100% 60% 60% 100% / 100% 100% 60% 60%' },
+                            '100%': { borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F8F9F8; }
+        ::-webkit-scrollbar-thumb { background: #8EA58C; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #738A6E; }
+
+        body { background-color: #F8F9F8; color: #344C3D; }
+
+        /* Reveal Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+
+        /* Glassmorphism */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(191, 207, 187, 0.3);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        /* Image Effects */
+        .img-parallax { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .group:hover .img-parallax { transform: scale(1.03); }
+
+        /* Marquee Container */
+        .marquee-container { display: flex; width: 200%; }
+        .marquee-container:hover { animation-play-state: paused; }
+
+        /* Lightbox */
+        #lightbox {
+            opacity: 0; pointer-events: none; transition: opacity 0.5s ease;
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        }
+        #lightbox.active { opacity: 1; pointer-events: auto; }
+        #lightbox img { transform: scale(0.95); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        #lightbox.active img { transform: scale(1); }
+
+        /* Decorative Element (Warm Beige) */
+        .organic-blob-container {
+            position: absolute; width: 500px; height: 500px; z-index: 0; pointer-events: none; opacity: 0.7;
+        }
+        .blob-solid {
+            position: absolute; inset: 0; background: #EBE5D9;
+            animation: morph 12s ease-in-out infinite both alternate, float 8s ease-in-out infinite;
+        }
+        .blob-outline {
+            position: absolute; inset: -15px; border: 2px solid #D8CDBA;
+            animation: morph-reverse 15s ease-in-out infinite both alternate, float 10s ease-in-out infinite 0.5s;
+            transform: rotate(15deg);
+        }
+
+        /* Initial Language Hide */
+        .lang-en { display: none; }
+    </style>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans antialiased overflow-x-hidden selection:bg-sage-core selection:text-white">
+
+    <nav class="fixed w-full z-50 transition-all duration-500 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <a href="#" class="flex items-center group relative z-10">
+                <img src="https://github.com/agelmet/SITARENIOU/blob/main/new_logo_marina-01%20(1).png?raw=true" alt="Μαρίνα Σιταρένιου Logo" class="h-16 w-auto object-contain drop-shadow-md transition-transform duration-700 group-hover:scale-105 group-hover:drop-shadow-xl">
+            </a>
+            
+            <div class="hidden lg:flex items-center space-x-10">
+                <a href="#about" class="text-sm font-medium tracking-wide text-sage-evergreen hover:text-sage-core transition-colors">
+                    <span class="lang-el">ΣΧΕΤΙΚΑ</span><span class="lang-en">ABOUT</span>
+                </a>
+                <a href="#approach" class="text-sm font-medium tracking-wide text-sage-evergreen hover:text-sage-core transition-colors">
+                    <span class="lang-el">ΠΡΟΣΕΓΓΙΣΗ</span><span class="lang-en">APPROACH</span>
+                </a>
+                <a href="#services" class="text-sm font-medium tracking-wide text-sage-evergreen hover:text-sage-core transition-colors">
+                    <span class="lang-el">ΥΠΗΡΕΣΙΕΣ</span><span class="lang-en">SERVICES</span>
+                </a>
+                <a href="#space" class="text-sm font-medium tracking-wide text-sage-evergreen hover:text-sage-core transition-colors">
+                    <span class="lang-el">Ο ΧΩΡΟΣ</span><span class="lang-en">THE SPACE</span>
+                </a>
+                <a href="#reviews" class="text-sm font-medium tracking-wide text-sage-evergreen hover:text-sage-core transition-colors">
+                    <span class="lang-el">ΑΞΙΟΛΟΓΗΣΕΙΣ</span><span class="lang-en">REVIEWS</span>
+                </a>
+                
+                <div class="flex items-center gap-4 border-l border-sage-hint pl-6">
+                    <button onclick="toggleLanguage()" id="lang-toggle" class="text-sm font-bold text-sage-evergreen hover:text-sage-core transition-colors uppercase tracking-widest w-8">
+                        EN
+                    </button>
+                    <a href="#contact" class="px-8 py-3 bg-sage-evergreen text-white rounded-none border border-sage-evergreen text-sm font-medium hover:bg-transparent hover:text-sage-evergreen transition-all duration-300">
+                        <span class="lang-el">ΡΑΝΤΕΒΟΥ</span><span class="lang-en">BOOK APPOINTMENT</span>
+                    </a>
+                </div>
+            </div>
+
+            <button class="lg:hidden text-sage-evergreen focus:outline-none z-50 relative" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="fixed inset-0 bg-[#F8F9F8] z-40 hidden flex-col items-center justify-center space-y-8 opacity-0 transition-opacity duration-300">
+            <a href="#about" class="text-2xl font-serif text-sage-evergreen mobile-link"><span class="lang-el">Σχετικά</span><span class="lang-en">About</span></a>
+            <a href="#approach" class="text-2xl font-serif text-sage-evergreen mobile-link"><span class="lang-el">Προσέγγιση</span><span class="lang-en">Approach</span></a>
+            <a href="#services" class="text-2xl font-serif text-sage-evergreen mobile-link"><span class="lang-el">Υπηρεσίες</span><span class="lang-en">Services</span></a>
+            <a href="#space" class="text-2xl font-serif text-sage-evergreen mobile-link"><span class="lang-el">Ο Χώρος</span><span class="lang-en">The Space</span></a>
+            <a href="#reviews" class="text-2xl font-serif text-sage-evergreen mobile-link"><span class="lang-el">Αξιολογήσεις</span><span class="lang-en">Reviews</span></a>
+            <a href="#contact" class="px-10 py-4 bg-sage-evergreen text-white rounded-none mt-4 text-lg font-medium mobile-link"><span class="lang-el">Κλείστε Ραντεβού</span><span class="lang-en">Book Appointment</span></a>
+            <button onclick="toggleLanguage(); document.getElementById('mobile-menu-btn').click();" class="text-lg font-bold text-sage-moss mt-4 underline underline-offset-4">
+                <span class="lang-el">Switch to English</span><span class="lang-en">Αλλαγή σε Ελληνικά</span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://raw.githubusercontent.com/agelmet/SITARENIOU/refs/heads/main/00adf7c7-5961-4c03-aa55-0ff5b4e7df10.jpg'); transform: scale(1.05);"></div>
+            <div class="absolute inset-0 bg-sage-evergreen/80 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#F8F9F8] opacity-90"></div>
+        </div>
+
+        <div class="relative z-10 text-center max-w-4xl mx-auto mt-20 reveal">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-sage-evergreen leading-[1.1] mb-8 drop-shadow-sm">
+                <span class="lang-el">Επούλωση μέσα από τη Σχεσιακή Ψυχοθεραπεία</span>
+                <span class="lang-en">Healing through Relational Psychotherapy</span>
+            </h1>
+            <p class="text-lg md:text-xl text-sage-moss mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                <span class="lang-el">Ένας ασφαλής χώρος στην Καλλιθέα όπου η θεραπευτική σχέση γίνεται το κεντρικό εργαλείο αλλαγής για ενήλικες, ζευγάρια και ομάδες.</span>
+                <span class="lang-en">A safe space in Kallithea where the therapeutic relationship becomes the central tool for change for adults, couples, and groups.</span>
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="#contact" class="px-10 py-4 bg-sage-evergreen text-white font-medium hover:bg-sage-moss transition-colors w-full sm:w-auto shadow-lg flex items-center justify-center gap-3">
+                    <span class="lang-el">ΕΠΙΚΟΙΝΩΝΙΑ</span><span class="lang-en">CONTACT US</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#about" class="px-10 py-4 border border-sage-evergreen text-sage-evergreen font-medium hover:bg-sage-evergreen hover:text-white transition-all w-full sm:w-auto flex items-center justify-center">
+                    <span class="lang-el">ΓΝΩΡΙΣΤΕ ΜΑΣ</span><span class="lang-en">MEET US</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 px-6 relative overflow-hidden bg-[#F8F9F8]">
+        <div class="organic-blob-container top-10 -left-40">
+            <div class="blob-solid"></div>
+            <div class="blob-outline"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div class="relative reveal group order-2 lg:order-1">
+                <div class="aspect-[3/4] overflow-hidden shadow-card rounded-sm bg-white p-3">
+                    <img src="https://github.com/agelmet/SITARENIOU/blob/main/sitar.jpg?raw=true" alt="Μαρίνα Σιταρένιου" class="w-full h-full object-cover img-parallax grayscale-[20%] sepia-[10%] group-hover:grayscale-0 group-hover:sepia-0 transition-all duration-1000">
+                </div>
+            </div>
+
+            <div class="reveal reveal-delay-1 order-1 lg:order-2">
+                <h2 class="text-sm font-bold tracking-widest text-sage-core uppercase mb-4">
+                    <span class="lang-el">Η ΨΥΧΟΛΟΓΟΣ</span><span class="lang-en">THE PSYCHOLOGIST</span>
+                </h2>
+                <h3 class="text-4xl md:text-5xl font-serif text-sage-evergreen mb-8 leading-tight">Μαρίνα Σιταρένιου</h3>
+                <div class="space-y-6 text-sage-moss font-light leading-relaxed text-lg">
+                    <p>
+                        <span class="lang-el">Η Μαρίνα Σιταρένιου είναι Ψυχολόγος, κάτοχος Μεταπτυχιακού Διπλώματος στην Ψυχολογία από το Πανεπιστήμιο Leiden της Ολλανδίας και Πτυχίου Ψυχολογίας από το Πανεπιστήμιο της Ρώμης “La Sapienza”. Διατηρεί ιδιωτικό γραφείο στην Καλλιθέα Αθηνών, όπου εργάζεται με ενήλικες, ζευγάρια και ομάδες.</span>
+                        <span class="lang-en">Marina Sitareniou is a Psychologist, holding a Master's Degree in Psychology from Leiden University in the Netherlands and a Bachelor's Degree in Psychology from the University of Rome "La Sapienza". She maintains a private practice in Kallithea, Athens, working with adults, couples, and groups.</span>
+                    </p>
+                    <p>
+                        <span class="lang-el">Έχει ειδίκευση στη Σχεσιακή και Ομαδική Ψυχοθεραπεία στο Ινστιτούτο Σχεσιακής και Ομαδικής Ψυχοθεραπείας (ΙΣΟΨ) και συντονίζει θεραπευτικές ομάδες βασισμένες στο διαπροσωπικό μοντέλο του Irvin Yalom. Προηγουμένως, παρακολούθησε μέρος της εκπαίδευσης στην Ελληνική Εταιρία Αναλυτικής Ομαδικής και Οικογενειακής Ψυχοθεραπείας, εμπειρία που συνέβαλε ουσιαστικά στη διαμόρφωση της κλινικής και θεωρητικής της πορείας.</span>
+                        <span class="lang-en">She specializes in Relational and Group Psychotherapy at the Institute of Relational and Group Psychotherapy (ISOP) and facilitates therapy groups based on Irvin Yalom's interpersonal model. Previously, she completed part of her training at the Hellenic Association of Analytic Group and Family Psychotherapy, an experience that significantly shaped her clinical and theoretical path.</span>
+                    </p>
+                    <p>
+                        <span class="lang-el">Διαθέτει κλινική εμπειρία στον χώρο του αυτισμού και των αναπηριών. Τα κλινικά της ενδιαφέροντα εστιάζουν στο τραύμα, το άγχος, την εμπειρία του ανήκειν σε μικτές κουλτούρες, την πολυγλωσσία και στα δυναμικά των θεραπευτικών σχέσεων και ομάδων.</span>
+                        <span class="lang-en">She has clinical experience in the field of autism and disabilities. Her clinical interests focus on trauma, anxiety, the experience of belonging in mixed cultures, multilingualism, and the dynamics of therapeutic relationships and groups.</span>
+                    </p>
+                    <p>
+                        <span class="lang-el">Το 2025 και το 2026 παρουσίασε εργασία στο Διεθνές Συνέδριο της Διεθνούς Ένωσης για τη Σχεσιακή Ψυχανάλυση και Ψυχοθεραπεία (IARPP) στην Αθήνα και στο Τορόντο. Είναι ενεργό μέλος της IARPP και της Αμερικανικής Ένωσης Ομαδικών Ψυχοθεραπευτών (AGPA).</span>
+                        <span class="lang-en">In 2025 and 2026, she presented her work at the International Conference of the International Association for Relational Psychoanalysis and Psychotherapy (IARPP) in Athens and Toronto. She is an active member of IARPP and the American Group Psychotherapy Association (AGPA).</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="approach" class="py-32 px-6 bg-sage-evergreen text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, #BFCFBB 0%, transparent 50%), radial-gradient(circle at 80% 80%, #EBE5D9 0%, transparent 50%);"></div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
+            <h2 class="text-4xl md:text-5xl font-serif mb-12">
+                <span class="lang-el">Το "Εμείς" ως Θεραπευτικό Εργαλείο</span>
+                <span class="lang-en">The "We" as a Therapeutic Tool</span>
+            </h2>
+            <p class="text-xl font-light text-sage-hint mb-16 leading-relaxed">
+                <span class="lang-el">Στη σύγχρονη ψυχολογία, συχνά εστιάζουμε υπερβολικά στο «Εγώ». Όμως, αντικειμενικά, κανένας από εμάς δεν γεννήθηκε, δεν μεγάλωσε και δεν επιβιώνει σε κενό. Είμαστε όντα κοινωνικά, πλασμένα μέσα από τις σχέσεις μας. Αυτή είναι η ουσία της <strong>Σχεσιακής Ψυχοθεραπείας</strong>.</span>
+                <span class="lang-en">In modern psychology, we often focus excessively on the "I". However, objectively, none of us was born, raised, or survives in a vacuum. We are social beings, shaped by our relationships. This is the essence of <strong>Relational Psychotherapy</strong>.</span>
+            </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 relative z-10">
+            <div class="p-8 border border-sage-moss/50 bg-white/5 hover:bg-white/10 transition-colors reveal">
+                <h4 class="text-2xl font-serif text-sage-beige mb-4">
+                    <span class="lang-el">Ο Καθρέφτης</span><span class="lang-en">The Mirror</span>
+                </h4>
+                <p class="text-sage-hint font-light leading-relaxed">
+                    <span class="lang-el">Στο γραφείο μου, δεν θα βρείτε μια απόμακρη θεραπεύτρια που κρατά σημειώσεις. Θα βρείτε μια θεραπεύτρια που είναι "παρούσα". Ο τρόπος που σχετιζόμαστε οι δυο μας είναι ο καλύτερος καθρέφτης για το πώς σχετίζεστε στην έξω ζωή σας.</span>
+                    <span class="lang-en">In my office, you won't find a distant therapist taking notes. You will find a therapist who is "present". The way we relate to each other is the best mirror for how you relate in your outside life.</span>
+                </p>
+            </div>
+            <div class="p-8 border border-sage-moss/50 bg-white/5 hover:bg-white/10 transition-colors reveal reveal-delay-1">
+                <h4 class="text-2xl font-serif text-sage-beige mb-4">
+                    <span class="lang-el">Ο Δεσμός</span><span class="lang-en">The Bond</span>
+                </h4>
+                <p class="text-sage-hint font-light leading-relaxed">
+                    <span class="lang-el">Πολλοί από εμάς κουβαλάμε τραύματα που δημιουργήθηκαν μέσα σε σχέσεις. Μόνο μέσα από μια υγιή, ασφαλή και σταθερή σχέση μπορούμε να επουλώσουμε αυτές τις πληγές. Χτίζουμε έναν ασφαλή δεσμό εδώ, για να τον μεταφέρετε έξω.</span>
+                    <span class="lang-en">Many of us carry trauma created within relationships. Only through a healthy, safe, and stable relationship can we heal these wounds. We build a secure bond here, so you can carry it out into the world.</span>
+                </p>
+            </div>
+            <div class="p-8 border border-sage-moss/50 bg-white/5 hover:bg-white/10 transition-colors reveal reveal-delay-2">
+                <h4 class="text-2xl font-serif text-sage-beige mb-4">
+                    <span class="lang-el">Η Ευελιξία</span><span class="lang-en">The Flexibility</span>
+                </h4>
+                <p class="text-sage-hint font-light leading-relaxed">
+                    <span class="lang-el">Η ικανότητα να εκφράζεσαι στη μητρική σου γλώσσα είναι καθοριστική. Είτε μιλάμε Ελληνικά, είτε Ιταλικά, είτε Αγγλικά, ο στόχος παραμένει ο ίδιος: να βρούμε τις λέξεις που περιγράφουν τον εσωτερικό σας κόσμο.</span>
+                    <span class="lang-en">The ability to express yourself in your mother tongue is crucial. Whether we speak Greek, Italian, or English, the goal remains the same: to find the words that describe your inner world.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-32 px-6 bg-[#F8F9F8] relative">
+        <div class="organic-blob-container bottom-10 right-0 transform translate-x-1/3">
+            <div class="blob-solid"></div>
+            <div class="blob-outline"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 reveal">
+                <h2 class="text-sm font-bold tracking-widest text-sage-core uppercase mb-4">
+                    <span class="lang-el">ΕΞΕΙΔΙΚΕΥΣΗ</span><span class="lang-en">SPECIALIZATION</span>
+                </h2>
+                <h3 class="text-4xl md:text-5xl font-serif text-sage-evergreen">
+                    <span class="lang-el">Υπηρεσίες Ψυχοθεραπείας</span>
+                    <span class="lang-en">Psychotherapy Services</span>
+                </h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 relative z-10">
+                
+                <div class="glass-card p-10 reveal border-t-4 border-t-sage-core hover:-translate-y-2 transition-transform duration-500">
+                    <h4 class="text-2xl font-serif text-sage-evergreen mb-3">
+                        <span class="lang-el">Σχεσιακή Ψυχοθεραπεία & Ψυχοδυναμική Προσέγγιση</span>
+                        <span class="lang-en">Relational Psychotherapy & Psychodynamic Approach</span>
+                    </h4>
+                    <p class="text-sm font-bold text-sage-moss mb-6 uppercase tracking-wider">
+                        <span class="lang-el">ΑΤΟΜΙΚΗ 45'</span><span class="lang-en">INDIVIDUAL 45'</span>
+                    </p>
+                    <p class="text-sage-evergreen/80 font-light leading-relaxed">
+                        <span class="lang-el">Εστιάζουμε στο πώς οι προηγούμενες εμπειρίες σας επηρεάζουν τον τρόπο που συνδέεστε σήμερα. Δουλεύουμε στην κατανόηση του εσωτερικού σας κόσμου και των υποσυνείδητων μοτίβων, βοηθώντας σας να "σπάσετε" τις αλυσίδες παλαιότερων τραυμάτων.</span>
+                        <span class="lang-en">We focus on how your past experiences affect the way you connect today. We work on understanding your inner world and subconscious patterns, helping you "break" the chains of past traumas.</span>
+                    </p>
+                </div>
+
+                <div class="glass-card p-10 reveal reveal-delay-1 border-t-4 border-t-sage-core hover:-translate-y-2 transition-transform duration-500">
+                    <h4 class="text-2xl font-serif text-sage-evergreen mb-3">
+                        <span class="lang-el">Ομαδική Ψυχαναλυτική Θεραπεία</span>
+                        <span class="lang-en">Group Psychoanalytic Therapy</span>
+                    </h4>
+                    <p class="text-sm font-bold text-sage-moss mb-6 uppercase tracking-wider">
+                        <span class="lang-el">ΟΜΑΔΙΚΗ 90'</span><span class="lang-en">GROUP 90'</span>
+                    </p>
+                    <p class="text-sage-evergreen/80 font-light leading-relaxed">
+                        <span class="lang-el">Η ομάδα λειτουργεί ως μικρόκοσμος της κοινωνίας. Αποκτάτε μια σπάνια ευκαιρία να δείτε πώς σας βλέπουν οι άλλοι. Ιδανικό πεδίο για επεξεργασία προβλημάτων σχέσεων, αναπτύσσοντας νέα επίπεδα ενσυναίσθησης και αυτοπεποίθησης.</span>
+                        <span class="lang-en">The group acts as a microcosm of society. You get a rare opportunity to see how others perceive you. An ideal setting for processing relationship issues, developing new levels of empathy and confidence.</span>
+                    </p>
+                </div>
+
+                <div class="glass-card p-10 reveal border-t-4 border-t-sage-core hover:-translate-y-2 transition-transform duration-500">
+                    <h4 class="text-2xl font-serif text-sage-evergreen mb-3">
+                        <span class="lang-el">Παιδοψυχολογία, Συμβουλευτική & Διαταραχές</span>
+                        <span class="lang-en">Child Psychology, Counseling & Disorders</span>
+                    </h4>
+                    <p class="text-sm font-bold text-sage-moss mb-6 uppercase tracking-wider">
+                        <span class="lang-el">ΠΑΙΔΙΑ / ΕΦΗΒΟΙ 45'</span><span class="lang-en">CHILDREN / TEENS 45'</span>
+                    </p>
+                    <p class="text-sage-evergreen/80 font-light leading-relaxed">
+                        <span class="lang-el">Υποστήριξη σε παιδιά και εφήβους με αναπτυξιακές δυσκολίες (αυτισμός), διαχείριση πένθους ή αλλαγές στην οικογένεια. Η προσέγγιση είναι παιδοκεντρική, εστιάζοντας στον ιδιαίτερο τρόπο έκφρασης του κάθε παιδιού.</span>
+                        <span class="lang-en">Support for children and adolescents with developmental difficulties (autism), grief management, or family changes. The approach is child-centered, focusing on each child's unique way of expression.</span>
+                    </p>
+                </div>
+
+                <div class="glass-card p-10 reveal reveal-delay-1 border-t-4 border-t-sage-core hover:-translate-y-2 transition-transform duration-500">
+                    <h4 class="text-2xl font-serif text-sage-evergreen mb-3">
+                        <span class="lang-el">Διαχείριση Άγχους & Διαδικτυακή Υποστήριξη</span>
+                        <span class="lang-en">Anxiety Management & Online Support</span>
+                    </h4>
+                    <p class="text-sm font-bold text-sage-moss mb-6 uppercase tracking-wider">
+                        <span class="lang-el">ΔΙΑ ΖΩΣΗΣ / ONLINE 45'</span><span class="lang-en">IN-PERSON / ONLINE 45'</span>
+                    </p>
+                    <p class="text-sage-evergreen/80 font-light leading-relaxed">
+                        <span class="lang-el">Αντιμετωπίζουμε καταστάσεις όπως χρόνιο άγχος, κατάθλιψη, κρίσεις πανικού και φοβίες, συνδυάζοντας βαθιά αναλυτική κατανόηση με πρακτικές διεξόδους. Εξασφαλίζουμε σταθερότητα στη θεραπεία από οπουδήποτε.</span>
+                        <span class="lang-en">We treat conditions like chronic anxiety, depression, panic attacks, and phobias, combining deep analytic understanding with practical outlets. Ensuring stability in therapy from anywhere.</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="space" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 mb-16 text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-serif text-sage-evergreen mb-6">
+                <span class="lang-el">Ο Χώρος</span><span class="lang-en">The Space</span>
+            </h2>
+            <p class="text-sage-moss font-light text-lg max-w-2xl mx-auto">
+                <span class="lang-el">Ένα ήρεμο, ζεστό και απόλυτα ιδιωτικό περιβάλλον, σχεδιασμένο για να νιώθετε ασφάλεια.</span>
+                <span class="lang-en">A calm, warm, and completely private environment, designed to make you feel safe.</span>
+            </p>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            <button class="w-full break-inside-avoid shadow-card group relative reveal" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/PYROVOLISIANOS/refs/heads/main/pyr4.png')">
+                <img src="https://raw.githubusercontent.com/agelmet/PYROVOLISIANOS/refs/heads/main/pyr4.png" alt="Γραφείο Ψυχολόγου 1" class="w-full h-auto img-parallax">
+                <div class="absolute inset-0 bg-sage-evergreen/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                </div>
+            </button>
+            <button class="w-full break-inside-avoid shadow-card group relative reveal reveal-delay-1" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/SITARENIOU/refs/heads/main/00adf7c7-5961-4c03-aa55-0ff5b4e7df10.jpg')">
+                <img src="https://raw.githubusercontent.com/agelmet/SITARENIOU/refs/heads/main/00adf7c7-5961-4c03-aa55-0ff5b4e7df10.jpg" alt="Γραφείο Ψυχολόγου 2" class="w-full h-auto img-parallax">
+                <div class="absolute inset-0 bg-sage-evergreen/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                </div>
+            </button>
+            <button class="w-full break-inside-avoid shadow-card group relative reveal reveal-delay-2" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/SITARENIOU/refs/heads/main/14d21b3c-21b1-4699-a491-bdbf38918add.jpg')">
+                <img src="https://raw.githubusercontent.com/agelmet/SITARENIOU/refs/heads/main/14d21b3c-21b1-4699-a491-bdbf38918add.jpg" alt="Γραφείο Ψυχολόγου 3" class="w-full h-auto img-parallax">
+                <div class="absolute inset-0 bg-sage-evergreen/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                </div>
+            </button>
+            <button class="w-full break-inside-avoid shadow-card group relative reveal" onclick="openLightbox('https://github.com/agelmet/SITARENIOU/blob/main/8c2a7105-45e3-445a-8f92-a8931b32d2bb.jpg?raw=true')">
+                <img src="https://github.com/agelmet/SITARENIOU/blob/main/8c2a7105-45e3-445a-8f92-a8931b32d2bb.jpg?raw=true" alt="Γραφείο Ψυχολόγου 4" class="w-full h-auto img-parallax">
+                <div class="absolute inset-0 bg-sage-evergreen/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                </div>
+            </button>
+            <button class="w-full break-inside-avoid shadow-card group relative reveal reveal-delay-1" onclick="openLightbox('https://github.com/agelmet/SITARENIOU/blob/main/8c9b23f4-e574-4aa5-a97a-b1eaff2aa5a2.jpg?raw=true')">
+                <img src="https://github.com/agelmet/SITARENIOU/blob/main/8c9b23f4-e574-4aa5-a97a-b1eaff2aa5a2.jpg?raw=true" alt="Γραφείο Ψυχολόγου 5" class="w-full h-auto img-parallax">
+                <div class="absolute inset-0 bg-sage-evergreen/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                </div>
+            </button>
+            <button class="w-full break-inside-avoid shadow-card group relative reveal reveal-delay-2" onclick="openLightbox('https://github.com/agelmet/SITARENIOU/blob/main/b31032f8-041c-4087-8c33-5e114f95296f.jpg?raw=true')">
+                <img src="https://github.com/agelmet/SITARENIOU/blob/main/b31032f8-041c-4087-8c33-5e114f95296f.jpg?raw=true" alt="Γραφείο Ψυχολόγου 6" class="w-full h-auto img-parallax">
+                <div class="absolute inset-0 bg-sage-evergreen/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <i data-lucide="zoom-in" class="w-8 h-8 text-white"></i>
+                </div>
+            </button>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-32 bg-sage-beige/30 overflow-hidden border-y border-sage-hint/20">
+        <div class="max-w-7xl mx-auto px-6 mb-16 text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-serif text-sage-evergreen mb-6">
+                <span class="lang-el">Εμπειρίες Θεραπευόμενων</span>
+                <span class="lang-en">Patient Experiences</span>
+            </h2>
+            <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" alt="Doctoranytime Logo" class="h-8 mx-auto mix-blend-multiply opacity-80">
+        </div>
+
+        <div class="w-full overflow-hidden relative pb-10">
+            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#F8F9F8] to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#F8F9F8] to-transparent z-10"></div>
+            
+            <div class="marquee-container animate-marquee">
+                <div class="flex space-x-6 px-3">
+                    <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
+                            <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
+                        </div>
+                        <p class="text-sage-moss font-light mb-6">"Η Μαρίνα Σιταρένιου είναι μία πολύ έμπιστη και ζεστή θεραπεύτρια πολύ καταρτισμένη στον τομέα της. Τη συνιστώ ανεπιφύλακτα για ψυχοθεραπεία σε ζητήματα δύσκολων σχέσεων και για ομαδική ψυχοθεραπεία!"</p>
+                        <div class="border-t border-sage-hint/20 pt-4">
+                            <p class="text-sm font-bold text-sage-evergreen">Αλεξανδρα</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">09 Δεκεμβρίου 2025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
+                            <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
+                        </div>
+                        <p class="text-sage-moss font-light mb-6">"Marina is really educated and you see this back in her professional approach. An warm and really dedicated therapist who helped me a lot to understand myself better. The office is easy reachable..."</p>
+                        <div class="border-t border-sage-hint/20 pt-4">
+                            <p class="text-sm font-bold text-sage-evergreen">jelle</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">10 Οκτωβρίου 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
+                            <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
+                        </div>
+                        <p class="text-sage-moss font-light mb-6">"Η εμπειρία μου με την Μαρινα ήταν εξαιρετική. Με βοήθησε πραγματικά να βρω τον δρόμο μου. Την προτείνω ανεπιφύλακτα"</p>
+                        <div class="border-t border-sage-hint/20 pt-4">
+                            <p class="text-sm font-bold text-sage-evergreen">Vasileios</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">19 Σεπτεμβρίου 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
+                            <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
+                        </div>
+                        <p class="text-sage-moss font-light mb-6">"Η Μαρίνα με βοήθησε να κατανοήσω καλύτερα τον εαυτό μου και να διαχειριστώ το άγχος μου. Δημιουργεί ένα ασφαλές και υποστηρικτικό περιβάλλον..."</p>
+                        <div class="border-t border-sage-hint/20 pt-4">
+                            <p class="text-sm font-bold text-sage-evergreen">Marta</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">17 Σεπτεμβρίου 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-serif text-2xl text-sage-evergreen">9.3 / 10</span>
+                            <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
+                        </div>
+                        <p class="text-sage-moss font-light mb-6">"Η Μαρίνα με έκανε από την πρώτη στιγμή να εκφραστώ όπως ήθελα και να ανοιχτώ για τα όσα θέματα με απασχολούσαν. Είναι προσιτή και φιλική..."</p>
+                        <div class="border-t border-sage-hint/20 pt-4">
+                            <p class="text-sm font-bold text-sage-evergreen">Μάρκος</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">02 Σεπτεμβρίου 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex space-x-6 px-3" aria-hidden="true">
+                    <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
+                            <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
+                        </div>
+                        <p class="text-sage-moss font-light mb-6">"Εξαιρετική επιστήμων με βαθιά γνώση του αντικειμένου της. Πολύ καλή επαγγελματίας και καταλλήλως καταρτισμένη σε ζητήματα ψυχικής υγείας. Την συνιστώ ανεπιφύλακτα."</p>
+                        <div class="border-t border-sage-hint/20 pt-4">
+                            <p class="text-sm font-bold text-sage-evergreen">ΒΑΣΙΛΙΚΗ</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">26 Αυγούστου 2024</p>
+                        </div>
+                    </div>
+                    <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
+                            <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
+                        </div>
+                        <p class="text-sage-moss font-light mb-6">"Άλλαξα πολλούς ψυχοθεραπευτές μέχρι να καταλήξω στη μαρίνα. Περασα μια δύσκολη στιγμή και η μαρινα με βοηθησε πολύ να σταθώ στα πόδια μου."</p>
+                        <div class="border-t border-sage-hint/20 pt-4">
+                            <p class="text-sm font-bold text-sage-evergreen">Γιωργος</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">24 Αυγούστου 2024</p>
+                        </div>
+                    </div>
+                    <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
+                            <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
+                        </div>
+                        <p class="text-sage-moss font-light mb-6">"I went into the session not knowing what to expect! But truly Marina knew exactly how to make me feel comfortable and confident in my communication. Fully recommend her."</p>
+                        <div class="border-t border-sage-hint/20 pt-4">
+                            <p class="text-sm font-bold text-sage-evergreen">Amira</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">12 Αυγούστου 2024</p>
+                        </div>
+                    </div>
+                     <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
+                            <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
+                        </div>
+                        <p class="text-sage-moss font-light mb-6">"Εξαιρετική επαγγελματίας, συνεπής, με μεγάλη κατανόηση και υπομονή! Δείχνει ενδιαφέρον και προσπαθεί να βοηθήσει όσο το δυνατόν περισσότερο τον ασθενή..."</p>
+                        <div class="border-t border-sage-hint/20 pt-4">
+                            <p class="text-sm font-bold text-sage-evergreen">Τζενη</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">09 Αυγούστου 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://www.doctoranytime.gr/d/Psychologos/sitareniou-marina#review-section" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 border border-sage-evergreen text-sage-evergreen hover:bg-sage-evergreen hover:text-white transition-all font-medium tracking-wide">
+                    <span class="lang-el">ΔΙΑΒΑΣΤΕ ΟΛΕΣ ΤΙΣ ΑΞΙΟΛΟΓΗΣΕΙΣ</span><span class="lang-en">READ ALL REVIEWS</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-sage-evergreen text-[#F8F9F8] pt-32 pb-12 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-sage-moss/20 rounded-full blur-[100px] transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+                
+                <div class="lg:col-span-2 reveal">
+                    <img src="https://github.com/agelmet/SITARENIOU/blob/main/new_logo_marina-01%20(1).png?raw=true" alt="Logo" class="h-20 w-auto mb-8 filter brightness-0 invert drop-shadow-md opacity-90">
+                    <p class="text-sage-hint font-light leading-relaxed max-w-sm mb-10 text-lg">
+                        <span class="lang-el">Η επούλωση ξεκινά με ένα βήμα. Επικοινωνήστε μαζί μας για να ορίσουμε την πρώτη σας συνεδρία.</span>
+                        <span class="lang-en">Healing begins with a step. Contact us to schedule your first session.</span>
+                    </p>
+                    <a href="https://www.doctoranytime.gr/d/Psychologos/sitareniou-marina" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-[#F8F9F8] text-sage-evergreen font-bold hover:bg-sage-hint transition-colors">
+                        <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" alt="DA" class="h-4 mix-blend-multiply">
+                        <span class="lang-el">ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ</span><span class="lang-en">BOOK APPOINTMENT</span>
+                    </a>
+                </div>
+
+                <div class="reveal reveal-delay-1">
+                    <h4 class="text-sm font-bold text-sage-beige mb-6 uppercase tracking-widest">
+                        <span class="lang-el">ΕΠΙΚΟΙΝΩΝΙΑ</span><span class="lang-en">CONTACT</span>
+                    </h4>
+                    <ul class="space-y-6 text-sage-hint font-light">
+                        <li class="flex items-start gap-4">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-sage-mint shrink-0 mt-1"></i>
+                            <span>Αραπάκη 56, Καλλιθέα, Αττική</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i data-lucide="phone" class="w-5 h-5 text-sage-mint shrink-0"></i>
+                            <a href="tel:+306936911727" class="hover:text-white transition-colors">+30 693 691 1727</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal reveal-delay-2">
+                    <h4 class="text-sm font-bold text-sage-beige mb-6 uppercase tracking-widest">
+                        <span class="lang-el">ΩΡΑΡΙΟ</span><span class="lang-en">HOURS</span>
+                    </h4>
+                    <ul class="space-y-6 text-sage-hint font-light">
+                        <li class="flex items-start gap-4">
+                            <i data-lucide="clock" class="w-5 h-5 text-sage-mint shrink-0 mt-1"></i>
+                            <div>
+                                <span class="block text-white mb-1">
+                                    <span class="lang-el">Δευτέρα - Σάββατο</span><span class="lang-en">Monday - Saturday</span>
+                                </span>
+                                <span>
+                                    <span class="lang-el">Κατόπιν Ραντεβού</span><span class="lang-en">By Appointment Only</span>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mt-10 flex gap-4">
+                        <a href="https://www.facebook.com/marinasitareniou" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/20 transition-colors p-2">
+                            <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/icons8-facebook-480.png" alt="Facebook" class="w-full h-full object-contain">
+                        </a>
+                        <a href="https://www.instagram.com/psy_marina.sitareniou/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/20 transition-colors p-2">
+                            <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/instagram-logo-instagram-icon-transparent-free-png.png.webp" alt="Instagram" class="w-full h-full object-contain">
+                        </a>
+                        <a href="https://www.linkedin.com/in/marsit/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/20 transition-colors p-2">
+                            <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/icons8-linkedin-480.png" alt="LinkedIn" class="w-full h-full object-contain filter brightness-0 invert">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-sage-moss/30 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-sage-hint/60 font-light reveal">
+                <p>© 2026 Μαρίνα Σιταρένιου.</p>
+                <p>
+                    Designed by <a href="https://advonmedia.com" target="_blank" rel="noopener" class="text-sage-mint hover:text-white transition-colors">Advon Media</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] flex items-center justify-center cursor-zoom-out" onclick="closeLightbox()">
+        <button class="absolute top-8 right-8 text-white hover:text-sage-mint transition-colors">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Enlarged View" class="max-w-[90vw] max-h-[90vh] object-contain shadow-2xl cursor-default" onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Language Toggle Logic
+        let currentLang = 'el';
+        
+        function toggleLanguage() {
+            currentLang = currentLang === 'el' ? 'en' : 'el';
+            
+            document.querySelectorAll('.lang-el').forEach(el => {
+                el.style.display = currentLang === 'el' ? 'inline-block' : 'none';
+            });
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.style.display = currentLang === 'en' ? 'inline-block' : 'none';
+            });
+            
+            const toggleBtn = document.getElementById('lang-toggle');
+            if (toggleBtn) {
+                toggleBtn.innerText = currentLang === 'el' ? 'EN' : 'GR';
+            }
+        }
+
+        // Initialize language state
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
+        });
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let menuOpen = false;
+
+        mobileBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if(menuOpen) {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => mobileMenu.classList.remove('opacity-0'), 10);
+            } else {
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-sm');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2', 'shadow-sm');
+            }
+        });
+
+        // Scroll Reveal Animations (Intersection Observer)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(imageSrc) {
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }, 500);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
+
+```
