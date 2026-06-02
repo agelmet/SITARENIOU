@@ -8,14 +8,18 @@
     <meta name="description" content="Η Μαρίνα Σιταρένιου είναι Ψυχολόγος με εξειδίκευση στη Σχεσιακή και Ομαδική Ψυχοθεραπεία. Ιδιωτικό γραφείο στην Καλλιθέα Αθηνών για ενήλικες, ζευγάρια και ομάδες.">
     <meta name="robots" content="index, follow">
     
+    <!-- Favicon -->
     <link rel="icon" href="https://github.com/agelmet/SITARENIOU/blob/main/new_logo_marina-01%20(1).png?raw=true" type="image/png">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -23,11 +27,11 @@
                     colors: {
                         sage: {
                             hint: '#BFCFBB',
-                            mint: '#BFCFBB', // Used identically to hint as per prompt constraints
+                            mint: '#BFCFBB',
                             core: '#8EA58C',
                             moss: '#738A6E',
                             evergreen: '#344C3D',
-                            beige: '#EBE5D9', // Warm beige for decorative elements
+                            beige: '#EBE5D9',
                             darkbeige: '#D8CDBA'
                         }
                     },
@@ -67,6 +71,7 @@
         }
     </script>
 
+    <!-- Custom CSS -->
     <style>
         /* Smooth Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
@@ -132,17 +137,23 @@
         .lang-en { display: none; }
     </style>
 
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="font-sans antialiased overflow-x-hidden selection:bg-sage-core selection:text-white">
 
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-500 glass-nav" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
             
+            <!-- Logo circled and not cropped -->
             <a href="#" class="flex items-center group relative z-10">
-                <img src="https://github.com/agelmet/SITARENIOU/blob/main/new_logo_marina-01%20(1).png?raw=true" alt="Μαρίνα Σιταρένιου Logo" class="h-16 w-auto object-contain drop-shadow-md transition-transform duration-700 group-hover:scale-105 group-hover:drop-shadow-xl">
+                <div class="w-16 h-16 rounded-full bg-white border border-sage-hint/30 shadow-sm flex items-center justify-center p-2 transition-transform duration-700 group-hover:scale-105 group-hover:shadow-md">
+                    <img src="https://github.com/agelmet/SITARENIOU/blob/main/new_logo_marina-01%20(1).png?raw=true" alt="Μαρίνα Σιταρένιου Logo" class="max-w-full max-h-full object-contain">
+                </div>
             </a>
             
+            <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center space-x-10">
                 <a href="#about" class="text-sm font-medium tracking-wide text-sage-evergreen hover:text-sage-core transition-colors">
                     <span class="lang-el">ΣΧΕΤΙΚΑ</span><span class="lang-en">ABOUT</span>
@@ -170,11 +181,13 @@
                 </div>
             </div>
 
+            <!-- Mobile Menu Button -->
             <button class="lg:hidden text-sage-evergreen focus:outline-none z-50 relative" id="mobile-menu-btn">
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
         
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="fixed inset-0 bg-[#F8F9F8] z-40 hidden flex-col items-center justify-center space-y-8 opacity-0 transition-opacity duration-300">
             <a href="#about" class="text-2xl font-serif text-sage-evergreen mobile-link"><span class="lang-el">Σχετικά</span><span class="lang-en">About</span></a>
             <a href="#approach" class="text-2xl font-serif text-sage-evergreen mobile-link"><span class="lang-el">Προσέγγιση</span><span class="lang-en">Approach</span></a>
@@ -188,7 +201,9 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+        <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://raw.githubusercontent.com/agelmet/SITARENIOU/refs/heads/main/00adf7c7-5961-4c03-aa55-0ff5b4e7df10.jpg'); transform: scale(1.05);"></div>
             <div class="absolute inset-0 bg-sage-evergreen/80 mix-blend-multiply"></div>
@@ -196,7 +211,8 @@
         </div>
 
         <div class="relative z-10 text-center max-w-4xl mx-auto mt-20 reveal">
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-sage-evergreen leading-[1.1] mb-8 drop-shadow-sm">
+            <!-- Adjusted Title Size -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-sage-evergreen leading-[1.2] mb-8 drop-shadow-sm">
                 <span class="lang-el">Επούλωση μέσα από τη Σχεσιακή Ψυχοθεραπεία</span>
                 <span class="lang-en">Healing through Relational Psychotherapy</span>
             </h1>
@@ -210,13 +226,15 @@
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
                 <a href="#about" class="px-10 py-4 border border-sage-evergreen text-sage-evergreen font-medium hover:bg-sage-evergreen hover:text-white transition-all w-full sm:w-auto flex items-center justify-center">
-                    <span class="lang-el">ΓΝΩΡΙΣΤΕ ΜΑΣ</span><span class="lang-en">MEET US</span>
+                    <span class="lang-el">ΓΝΩΡΙΣΤΕ ΜΕ</span><span class="lang-en">MEET ME</span>
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="py-32 px-6 relative overflow-hidden bg-[#F8F9F8]">
+        <!-- Decorative Blob -->
         <div class="organic-blob-container top-10 -left-40">
             <div class="blob-solid"></div>
             <div class="blob-outline"></div>
@@ -256,6 +274,7 @@
         </div>
     </section>
 
+    <!-- The "We" Approach Section -->
     <section id="approach" class="py-32 px-6 bg-sage-evergreen text-white relative overflow-hidden">
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, #BFCFBB 0%, transparent 50%), radial-gradient(circle at 80% 80%, #EBE5D9 0%, transparent 50%);"></div>
         
@@ -301,6 +320,7 @@
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="py-32 px-6 bg-[#F8F9F8] relative">
         <div class="organic-blob-container bottom-10 right-0 transform translate-x-1/3">
             <div class="blob-solid"></div>
@@ -320,6 +340,7 @@
 
             <div class="grid md:grid-cols-2 gap-8 relative z-10">
                 
+                <!-- Service 1 -->
                 <div class="glass-card p-10 reveal border-t-4 border-t-sage-core hover:-translate-y-2 transition-transform duration-500">
                     <h4 class="text-2xl font-serif text-sage-evergreen mb-3">
                         <span class="lang-el">Σχεσιακή Ψυχοθεραπεία & Ψυχοδυναμική Προσέγγιση</span>
@@ -334,6 +355,7 @@
                     </p>
                 </div>
 
+                <!-- Service 2 -->
                 <div class="glass-card p-10 reveal reveal-delay-1 border-t-4 border-t-sage-core hover:-translate-y-2 transition-transform duration-500">
                     <h4 class="text-2xl font-serif text-sage-evergreen mb-3">
                         <span class="lang-el">Ομαδική Ψυχαναλυτική Θεραπεία</span>
@@ -348,6 +370,7 @@
                     </p>
                 </div>
 
+                <!-- Service 3 -->
                 <div class="glass-card p-10 reveal border-t-4 border-t-sage-core hover:-translate-y-2 transition-transform duration-500">
                     <h4 class="text-2xl font-serif text-sage-evergreen mb-3">
                         <span class="lang-el">Παιδοψυχολογία, Συμβουλευτική & Διαταραχές</span>
@@ -362,6 +385,7 @@
                     </p>
                 </div>
 
+                <!-- Service 4 -->
                 <div class="glass-card p-10 reveal reveal-delay-1 border-t-4 border-t-sage-core hover:-translate-y-2 transition-transform duration-500">
                     <h4 class="text-2xl font-serif text-sage-evergreen mb-3">
                         <span class="lang-el">Διαχείριση Άγχους & Διαδικτυακή Υποστήριξη</span>
@@ -380,6 +404,7 @@
         </div>
     </section>
 
+    <!-- Space Gallery Section -->
     <section id="space" class="py-32 bg-white">
         <div class="max-w-7xl mx-auto px-6 mb-16 text-center reveal">
             <h2 class="text-4xl md:text-5xl font-serif text-sage-evergreen mb-6">
@@ -391,6 +416,7 @@
             </p>
         </div>
 
+        <!-- Masonry-like Grid for uncropped display -->
         <div class="max-w-7xl mx-auto px-6 columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
             <button class="w-full break-inside-avoid shadow-card group relative reveal" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/PYROVOLISIANOS/refs/heads/main/pyr4.png')">
                 <img src="https://raw.githubusercontent.com/agelmet/PYROVOLISIANOS/refs/heads/main/pyr4.png" alt="Γραφείο Ψυχολόγου 1" class="w-full h-auto img-parallax">
@@ -431,6 +457,7 @@
         </div>
     </section>
 
+    <!-- Reviews Section -->
     <section id="reviews" class="py-32 bg-sage-beige/30 overflow-hidden border-y border-sage-hint/20">
         <div class="max-w-7xl mx-auto px-6 mb-16 text-center reveal">
             <h2 class="text-4xl md:text-5xl font-serif text-sage-evergreen mb-6">
@@ -445,111 +472,169 @@
             <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#F8F9F8] to-transparent z-10"></div>
             
             <div class="marquee-container animate-marquee">
+                <!-- Review 1 -->
                 <div class="flex space-x-6 px-3">
                     <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
                         <div class="flex justify-between items-start mb-6">
                             <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
                             <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
                         </div>
-                        <p class="text-sage-moss font-light mb-6">"Η Μαρίνα Σιταρένιου είναι μία πολύ έμπιστη και ζεστή θεραπεύτρια πολύ καταρτισμένη στον τομέα της. Τη συνιστώ ανεπιφύλακτα για ψυχοθεραπεία σε ζητήματα δύσκολων σχέσεων και για ομαδική ψυχοθεραπεία!"</p>
+                        <p class="text-sage-moss font-light mb-6 italic">
+                            <span class="lang-el">"Η Μαρίνα Σιταρένιου είναι μία πολύ έμπιστη και ζεστή θεραπεύτρια πολύ καταρτισμένη στον τομέα της. Τη συνιστώ ανεπιφύλακτα για ψυχοθεραπεία σε ζητήματα δύσκολων σχέσεων και για ομαδική ψυχοθεραπεία!"</span>
+                            <span class="lang-en">"Marina Sitareniou is a very trustworthy and warm therapist, highly trained in her field. I highly recommend her for psychotherapy regarding difficult relationships and for group psychotherapy!"</span>
+                        </p>
                         <div class="border-t border-sage-hint/20 pt-4">
                             <p class="text-sm font-bold text-sage-evergreen">Αλεξανδρα</p>
-                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">09 Δεκεμβρίου 2025</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">
+                                <span class="lang-el">09 Δεκεμβρίου 2025</span><span class="lang-en">09 December 2025</span>
+                            </p>
                         </div>
                     </div>
                     
+                    <!-- Review 2 -->
                     <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
                         <div class="flex justify-between items-start mb-6">
                             <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
                             <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
                         </div>
-                        <p class="text-sage-moss font-light mb-6">"Marina is really educated and you see this back in her professional approach. An warm and really dedicated therapist who helped me a lot to understand myself better. The office is easy reachable..."</p>
+                        <p class="text-sage-moss font-light mb-6 italic">
+                            <span class="lang-el">"Η Μαρίνα είναι πολύ καταρτισμένη και αυτό φαίνεται στην επαγγελματική της προσέγγιση. Μια ζεστή και πραγματικά αφοσιωμένη θεραπεύτρια που με βοήθησε πολύ να κατανοήσω καλύτερα τον εαυτό μου. Το γραφείο είναι εύκολα προσβάσιμο..."</span>
+                            <span class="lang-en">"Marina is really educated and you see this back in her professional approach. An warm and really dedicated therapist who helped me a lot to understand myself better. The office is easy reachable..."</span>
+                        </p>
                         <div class="border-t border-sage-hint/20 pt-4">
                             <p class="text-sm font-bold text-sage-evergreen">jelle</p>
-                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">10 Οκτωβρίου 2024</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">
+                                <span class="lang-el">10 Οκτωβρίου 2024</span><span class="lang-en">10 October 2024</span>
+                            </p>
                         </div>
                     </div>
 
+                    <!-- Review 3 -->
                     <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
                         <div class="flex justify-between items-start mb-6">
                             <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
                             <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
                         </div>
-                        <p class="text-sage-moss font-light mb-6">"Η εμπειρία μου με την Μαρινα ήταν εξαιρετική. Με βοήθησε πραγματικά να βρω τον δρόμο μου. Την προτείνω ανεπιφύλακτα"</p>
+                        <p class="text-sage-moss font-light mb-6 italic">
+                            <span class="lang-el">"Η εμπειρία μου με την Μαρινα ήταν εξαιρετική. Με βοήθησε πραγματικά να βρω τον δρόμο μου. Την προτείνω ανεπιφύλακτα"</span>
+                            <span class="lang-en">"My experience with Marina was excellent. She truly helped me find my way. I highly recommend her."</span>
+                        </p>
                         <div class="border-t border-sage-hint/20 pt-4">
                             <p class="text-sm font-bold text-sage-evergreen">Vasileios</p>
-                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">19 Σεπτεμβρίου 2024</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">
+                                <span class="lang-el">19 Σεπτεμβρίου 2024</span><span class="lang-en">19 September 2024</span>
+                            </p>
                         </div>
                     </div>
 
+                    <!-- Review 4 -->
                     <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
                         <div class="flex justify-between items-start mb-6">
                             <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
                             <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
                         </div>
-                        <p class="text-sage-moss font-light mb-6">"Η Μαρίνα με βοήθησε να κατανοήσω καλύτερα τον εαυτό μου και να διαχειριστώ το άγχος μου. Δημιουργεί ένα ασφαλές και υποστηρικτικό περιβάλλον..."</p>
+                        <p class="text-sage-moss font-light mb-6 italic">
+                            <span class="lang-el">"Η Μαρίνα με βοήθησε να κατανοήσω καλύτερα τον εαυτό μου και να διαχειριστώ το άγχος μου. Δημιουργεί ένα ασφαλές και υποστηρικτικό περιβάλλον, όπου νιώθω ελεύθερη να εκφράζω τις σκέψεις μου..."</span>
+                            <span class="lang-en">"Marina helped me understand myself better and manage my anxiety. She creates a safe and supportive environment where I feel free to express my thoughts and emotions..."</span>
+                        </p>
                         <div class="border-t border-sage-hint/20 pt-4">
                             <p class="text-sm font-bold text-sage-evergreen">Marta</p>
-                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">17 Σεπτεμβρίου 2024</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">
+                                <span class="lang-el">17 Σεπτεμβρίου 2024</span><span class="lang-en">17 September 2024</span>
+                            </p>
                         </div>
                     </div>
 
+                    <!-- Review 5 -->
                     <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
                         <div class="flex justify-between items-start mb-6">
                             <span class="font-serif text-2xl text-sage-evergreen">9.3 / 10</span>
                             <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
                         </div>
-                        <p class="text-sage-moss font-light mb-6">"Η Μαρίνα με έκανε από την πρώτη στιγμή να εκφραστώ όπως ήθελα και να ανοιχτώ για τα όσα θέματα με απασχολούσαν. Είναι προσιτή και φιλική..."</p>
+                        <p class="text-sage-moss font-light mb-6 italic">
+                            <span class="lang-el">"Η Μαρίνα με έκανε από την πρώτη στιγμή να εκφραστώ όπως ήθελα και να ανοιχτώ για τα όσα θέματα με απασχολούσαν. Είναι προσιτή και φιλική και δεν σε κρίνει ! Την συνιστώ ανεπιφύλαχτα !"</span>
+                            <span class="lang-en">"From the very first moment, Marina allowed me to express myself exactly as I wanted and to open up. She is approachable and friendly and never judges you! I highly recommend her!"</span>
+                        </p>
                         <div class="border-t border-sage-hint/20 pt-4">
                             <p class="text-sm font-bold text-sage-evergreen">Μάρκος</p>
-                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">02 Σεπτεμβρίου 2024</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">
+                                <span class="lang-el">02 Σεπτεμβρίου 2024</span><span class="lang-en">02 September 2024</span>
+                            </p>
                         </div>
                     </div>
                 </div>
 
+                <!-- Duplicate for seamless scroll -->
                 <div class="flex space-x-6 px-3" aria-hidden="true">
+                    <!-- Review 6 -->
                     <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
                         <div class="flex justify-between items-start mb-6">
                             <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
                             <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
                         </div>
-                        <p class="text-sage-moss font-light mb-6">"Εξαιρετική επιστήμων με βαθιά γνώση του αντικειμένου της. Πολύ καλή επαγγελματίας και καταλλήλως καταρτισμένη σε ζητήματα ψυχικής υγείας. Την συνιστώ ανεπιφύλακτα."</p>
+                        <p class="text-sage-moss font-light mb-6 italic">
+                            <span class="lang-el">"Εξαιρετική επιστήμων με βαθιά γνώση του αντικειμένου της. Πολύ καλή επαγγελματίας και καταλλήλως καταρτισμένη σε ζητήματα ψυχικής υγείας. Την συνιστώ ανεπιφύλακτα."</span>
+                            <span class="lang-en">"An excellent scientist with deep knowledge of her field. A very good professional and properly trained in mental health issues. I highly recommend her."</span>
+                        </p>
                         <div class="border-t border-sage-hint/20 pt-4">
                             <p class="text-sm font-bold text-sage-evergreen">ΒΑΣΙΛΙΚΗ</p>
-                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">26 Αυγούστου 2024</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">
+                                <span class="lang-el">26 Αυγούστου 2024</span><span class="lang-en">26 August 2024</span>
+                            </p>
                         </div>
                     </div>
+                    
+                    <!-- Review 7 -->
                     <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
                         <div class="flex justify-between items-start mb-6">
                             <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
                             <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
                         </div>
-                        <p class="text-sage-moss font-light mb-6">"Άλλαξα πολλούς ψυχοθεραπευτές μέχρι να καταλήξω στη μαρίνα. Περασα μια δύσκολη στιγμή και η μαρινα με βοηθησε πολύ να σταθώ στα πόδια μου."</p>
+                        <p class="text-sage-moss font-light mb-6 italic">
+                            <span class="lang-el">"Άλλαξα πολλούς ψυχοθεραπευτές μέχρι να καταλήξω στη μαρίνα. Περασα μια δύσκολη στιγμή και η μαρινα με βοηθησε πολύ να σταθώ στα πόδια μου. Καταρτισμένη επαγγελματίας."</span>
+                            <span class="lang-en">"I changed many psychotherapists before ending up with Marina. I went through a difficult time and Marina helped me a lot to get back on my feet. A qualified professional."</span>
+                        </p>
                         <div class="border-t border-sage-hint/20 pt-4">
                             <p class="text-sm font-bold text-sage-evergreen">Γιωργος</p>
-                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">24 Αυγούστου 2024</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">
+                                <span class="lang-el">24 Αυγούστου 2024</span><span class="lang-en">24 August 2024</span>
+                            </p>
                         </div>
                     </div>
+
+                    <!-- Review 8 -->
                     <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
                         <div class="flex justify-between items-start mb-6">
                             <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
                             <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
                         </div>
-                        <p class="text-sage-moss font-light mb-6">"I went into the session not knowing what to expect! But truly Marina knew exactly how to make me feel comfortable and confident in my communication. Fully recommend her."</p>
+                        <p class="text-sage-moss font-light mb-6 italic">
+                            <span class="lang-el">"Πήγα στη συνεδρία χωρίς να ξέρω τι να περιμένω! Αλλά πραγματικά η Μαρίνα ήξερε ακριβώς πώς να με κάνει να νιώσω άνετα και με αυτοπεποίθηση στην επικοινωνία μου. Την προτείνω ανεπιφύλακτα."</span>
+                            <span class="lang-en">"I went into the session not knowing what to expect! But truly Marina knew exactly how to make me feel comfortable and confident in my communication. Fully recommend her."</span>
+                        </p>
                         <div class="border-t border-sage-hint/20 pt-4">
                             <p class="text-sm font-bold text-sage-evergreen">Amira</p>
-                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">12 Αυγούστου 2024</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">
+                                <span class="lang-el">12 Αυγούστου 2024</span><span class="lang-en">12 August 2024</span>
+                            </p>
                         </div>
                     </div>
-                     <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
+                    
+                    <!-- Review 9 -->
+                    <div class="w-96 bg-white p-8 shadow-card shrink-0 border border-sage-hint/20 relative">
                         <div class="flex justify-between items-start mb-6">
                             <span class="font-serif text-2xl text-sage-evergreen">10.0 / 10</span>
                             <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-5 opacity-40 mix-blend-multiply" alt="DA">
                         </div>
-                        <p class="text-sage-moss font-light mb-6">"Εξαιρετική επαγγελματίας, συνεπής, με μεγάλη κατανόηση και υπομονή! Δείχνει ενδιαφέρον και προσπαθεί να βοηθήσει όσο το δυνατόν περισσότερο τον ασθενή..."</p>
+                        <p class="text-sage-moss font-light mb-6 italic">
+                            <span class="lang-el">"Εξαιρετική επαγγελματίας, συνεπής, με μεγάλη κατανόηση και υπομονή! Σε κάνει να νιώθεις άνετα και να μιλάς χωρίς ντροπή! Τη συνιστώ ανεπιφυλακτα."</span>
+                            <span class="lang-en">"An excellent professional, consistent, with great understanding and patience! She makes you feel comfortable and speak without shame! I highly recommend her."</span>
+                        </p>
                         <div class="border-t border-sage-hint/20 pt-4">
                             <p class="text-sm font-bold text-sage-evergreen">Τζενη</p>
-                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">09 Αυγούστου 2024</p>
+                            <p class="text-xs text-sage-moss/60 uppercase tracking-widest">
+                                <span class="lang-el">09 Αυγούστου 2024</span><span class="lang-en">09 August 2024</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -563,6 +648,7 @@
         </div>
     </section>
 
+    <!-- Footer / Contact -->
     <footer id="contact" class="bg-sage-evergreen text-[#F8F9F8] pt-32 pb-12 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-sage-moss/20 rounded-full blur-[100px] transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
         
@@ -570,7 +656,6 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
                 
                 <div class="lg:col-span-2 reveal">
-                    <img src="https://github.com/agelmet/SITARENIOU/blob/main/new_logo_marina-01%20(1).png?raw=true" alt="Logo" class="h-20 w-auto mb-8 filter brightness-0 invert drop-shadow-md opacity-90">
                     <p class="text-sage-hint font-light leading-relaxed max-w-sm mb-10 text-lg">
                         <span class="lang-el">Η επούλωση ξεκινά με ένα βήμα. Επικοινωνήστε μαζί μας για να ορίσουμε την πρώτη σας συνεδρία.</span>
                         <span class="lang-en">Healing begins with a step. Contact us to schedule your first session.</span>
@@ -623,7 +708,8 @@
                             <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/instagram-logo-instagram-icon-transparent-free-png.png.webp" alt="Instagram" class="w-full h-full object-contain">
                         </a>
                         <a href="https://www.linkedin.com/in/marsit/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/20 transition-colors p-2">
-                            <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/icons8-linkedin-480.png" alt="LinkedIn" class="w-full h-full object-contain filter brightness-0 invert">
+                            <!-- Removed the invert filter to show the original colors -->
+                            <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/icons8-linkedin-480.png" alt="LinkedIn" class="w-full h-full object-contain">
                         </a>
                     </div>
                 </div>
@@ -639,6 +725,7 @@
         </div>
     </footer>
 
+    <!-- Lightbox Element -->
     <div id="lightbox" class="fixed inset-0 z-[100] flex items-center justify-center cursor-zoom-out" onclick="closeLightbox()">
         <button class="absolute top-8 right-8 text-white hover:text-sage-mint transition-colors">
             <i data-lucide="x" class="w-10 h-10"></i>
@@ -646,6 +733,7 @@
         <img id="lightbox-img" src="" alt="Enlarged View" class="max-w-[90vw] max-h-[90vh] object-contain shadow-2xl cursor-default" onclick="event.stopPropagation()">
     </div>
 
+    <!-- Scripts -->
     <script>
         // Initialize Icons
         lucide.createIcons();
@@ -704,9 +792,9 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 navbar.classList.add('py-2', 'shadow-sm');
-                navbar.classList.remove('py-4');
+                navbar.classList.remove('py-3');
             } else {
-                navbar.classList.add('py-4');
+                navbar.classList.add('py-3');
                 navbar.classList.remove('py-2', 'shadow-sm');
             }
         });
@@ -757,5 +845,3 @@
     </script>
 </body>
 </html>
-
-```
