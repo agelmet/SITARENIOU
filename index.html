@@ -146,11 +146,9 @@
     <nav class="fixed w-full z-50 transition-all duration-500 glass-nav" id="navbar">
         <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
             
-            <!-- Logo circled and not cropped -->
+            <!-- Logo directly applied with a slightly circled shape -->
             <a href="#" class="flex items-center group relative z-10">
-                <div class="w-16 h-16 rounded-full bg-white border border-sage-hint/30 shadow-sm flex items-center justify-center p-2 transition-transform duration-700 group-hover:scale-105 group-hover:shadow-md">
-                    <img src="https://github.com/agelmet/SITARENIOU/blob/main/new_logo_marina-01%20(1).png?raw=true" alt="Μαρίνα Σιταρένιου Logo" class="max-w-full max-h-full object-contain">
-                </div>
+                <img src="https://github.com/agelmet/SITARENIOU/blob/main/new_logo_marina-01%20(1).png?raw=true" alt="Μαρίνα Σιταρένιου Logo" class="h-16 w-auto object-contain rounded-[2rem] drop-shadow-md transition-transform duration-700 group-hover:scale-105 group-hover:drop-shadow-xl">
             </a>
             
             <!-- Desktop Menu -->
@@ -240,14 +238,16 @@
             <div class="blob-outline"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
-            <div class="relative reveal group order-2 lg:order-1">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start relative z-10">
+            <!-- Desktop Image (Hidden on Mobile) -->
+            <div class="relative reveal group hidden lg:block lg:sticky lg:top-32">
                 <div class="aspect-[3/4] overflow-hidden shadow-card rounded-sm bg-white p-3">
                     <img src="https://github.com/agelmet/SITARENIOU/blob/main/sitar.jpg?raw=true" alt="Μαρίνα Σιταρένιου" class="w-full h-full object-cover img-parallax grayscale-[20%] sepia-[10%] group-hover:grayscale-0 group-hover:sepia-0 transition-all duration-1000">
                 </div>
             </div>
 
-            <div class="reveal reveal-delay-1 order-1 lg:order-2">
+            <!-- Text Content & Mobile Image -->
+            <div class="reveal reveal-delay-1">
                 <h2 class="text-sm font-bold tracking-widest text-sage-core uppercase mb-4">
                     <span class="lang-el">Η ΨΥΧΟΛΟΓΟΣ</span><span class="lang-en">THE PSYCHOLOGIST</span>
                 </h2>
@@ -257,6 +257,14 @@
                         <span class="lang-el">Η Μαρίνα Σιταρένιου είναι Ψυχολόγος, κάτοχος Μεταπτυχιακού Διπλώματος στην Ψυχολογία από το Πανεπιστήμιο Leiden της Ολλανδίας και Πτυχίου Ψυχολογίας από το Πανεπιστήμιο της Ρώμης “La Sapienza”. Διατηρεί ιδιωτικό γραφείο στην Καλλιθέα Αθηνών, όπου εργάζεται με ενήλικες, ζευγάρια και ομάδες.</span>
                         <span class="lang-en">Marina Sitareniou is a Psychologist, holding a Master's Degree in Psychology from Leiden University in the Netherlands and a Bachelor's Degree in Psychology from the University of Rome "La Sapienza". She maintains a private practice in Kallithea, Athens, working with adults, couples, and groups.</span>
                     </p>
+
+                    <!-- Mobile Image (Hidden on Desktop) placed exactly after first paragraph -->
+                    <div class="relative group block lg:hidden my-10">
+                        <div class="aspect-[3/4] overflow-hidden shadow-card rounded-sm bg-white p-2">
+                            <img src="https://github.com/agelmet/SITARENIOU/blob/main/sitar.jpg?raw=true" alt="Μαρίνα Σιταρένιου" class="w-full h-full object-cover img-parallax grayscale-[20%] sepia-[10%] group-hover:grayscale-0 group-hover:sepia-0 transition-all duration-1000">
+                        </div>
+                    </div>
+
                     <p>
                         <span class="lang-el">Έχει ειδίκευση στη Σχεσιακή και Ομαδική Ψυχοθεραπεία στο Ινστιτούτο Σχεσιακής και Ομαδικής Ψυχοθεραπείας (ΙΣΟΨ) και συντονίζει θεραπευτικές ομάδες βασισμένες στο διαπροσωπικό μοντέλο του Irvin Yalom. Προηγουμένως, παρακολούθησε μέρος της εκπαίδευσης στην Ελληνική Εταιρία Αναλυτικής Ομαδικής και Οικογενειακής Ψυχοθεραπείας, εμπειρία που συνέβαλε ουσιαστικά στη διαμόρφωση της κλινικής και θεωρητικής της πορείας.</span>
                         <span class="lang-en">She specializes in Relational and Group Psychotherapy at the Institute of Relational and Group Psychotherapy (ISOP) and facilitates therapy groups based on Irvin Yalom's interpersonal model. Previously, she completed part of her training at the Hellenic Association of Analytic Group and Family Psychotherapy, an experience that significantly shaped her clinical and theoretical path.</span>
@@ -708,8 +716,7 @@
                             <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/instagram-logo-instagram-icon-transparent-free-png.png.webp" alt="Instagram" class="w-full h-full object-contain">
                         </a>
                         <a href="https://www.linkedin.com/in/marsit/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/20 transition-colors p-2">
-                            <!-- Removed the invert filter to show the original colors -->
-                            <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/icons8-linkedin-480.png" alt="LinkedIn" class="w-full h-full object-contain">
+                            <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/icons8-linkedin-480.png" alt="LinkedIn" class="w-full h-full object-contain filter brightness-0 invert">
                         </a>
                     </div>
                 </div>
