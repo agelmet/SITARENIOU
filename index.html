@@ -105,6 +105,13 @@
         .marquee-container { display: flex; width: 200%; }
         .marquee-container:hover { animation-play-state: paused; }
 
+        /* Speed up marquee specifically on mobile */
+        @media (max-width: 768px) {
+            .animate-marquee {
+                animation-duration: 25s !important;
+            }
+        }
+
         #lightbox {
             opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -181,21 +188,24 @@
                 </div>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button class="lg:hidden text-sage-evergreen focus:outline-none z-50 relative" id="mobile-menu-btn">
-                <i data-lucide="menu" class="w-8 h-8"></i>
+            <!-- Mobile Menu Button (Hamburger & X) -->
+            <button class="lg:hidden text-sage-evergreen focus:outline-none z-50 relative p-2" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-8 h-8 transition-transform" id="menu-icon-open"></i>
+                <i data-lucide="x" class="w-8 h-8 hidden transition-transform" id="menu-icon-close"></i>
             </button>
         </div>
         
-        <!-- Mobile Menu (Fixed Glitch via opacity/visibility transition) -->
-        <div id="mobile-menu" class="fixed inset-0 bg-[#F8F9F8] z-40 flex flex-col items-center justify-center space-y-6 opacity-0 invisible pointer-events-none transition-all duration-300 ease-in-out">
+        <!-- Mobile Menu (Fixed Scroll & Clipping Bug) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-[#F8F9F8] z-40 flex flex-col items-center justify-start pt-36 pb-12 space-y-6 opacity-0 invisible pointer-events-none transition-all duration-300 ease-in-out overflow-y-auto">
             <a href="#about" class="text-2xl font-serif text-sage-evergreen mobile-link"><span class="lang-el">Η Θεραπεύτρια</span><span class="lang-en">The Therapist</span></a>
             <a href="#approach" class="text-2xl font-serif text-sage-evergreen mobile-link"><span class="lang-el">Προσέγγιση</span><span class="lang-en">Approach</span></a>
             <a href="#services" class="text-2xl font-serif text-sage-evergreen mobile-link"><span class="lang-el">Υπηρεσίες</span><span class="lang-en">Services</span></a>
             <a href="#space" class="text-2xl font-serif text-sage-evergreen mobile-link"><span class="lang-el">Ο Χώρος</span><span class="lang-en">The Space</span></a>
             <a href="#reviews" class="text-2xl font-serif text-sage-evergreen mobile-link"><span class="lang-el">Αξιολογήσεις</span><span class="lang-en">Reviews</span></a>
-            <a href="#contact" class="px-10 py-4 bg-sage-evergreen text-white rounded-none mt-4 text-lg font-medium mobile-link"><span class="lang-el">Κλείστε Ραντεβού</span><span class="lang-en">Book Appointment</span></a>
-            <a href="#contact" class="px-10 py-4 bg-sage-beige text-sage-evergreen rounded-none text-lg font-medium mobile-link"><span class="lang-el">Συνεργασίες</span><span class="lang-en">Partnerships</span></a>
+            <div class="pt-4 flex flex-col w-full px-10 gap-4">
+                <a href="#contact" class="w-full py-4 bg-sage-evergreen text-white text-center rounded-none text-lg font-medium mobile-link"><span class="lang-el">Κλείστε Ραντεβού</span><span class="lang-en">Book Appointment</span></a>
+                <a href="#contact" class="w-full py-4 border border-sage-evergreen text-sage-evergreen text-center rounded-none text-lg font-medium mobile-link"><span class="lang-el">Συνεργασίες</span><span class="lang-en">Partnerships</span></a>
+            </div>
             <button onclick="toggleLanguage(); document.getElementById('mobile-menu-btn').click();" class="text-lg font-bold text-sage-moss mt-4 underline underline-offset-4">
                 <span class="lang-el">Switch to English</span><span class="lang-en">Αλλαγή σε Ελληνικά</span>
             </button>
@@ -769,7 +779,7 @@
                         <a href="https://www.instagram.com/psy_marina.sitareniou/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/20 transition-colors p-2">
                             <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/instagram-logo-instagram-icon-transparent-free-png.png.webp" alt="Instagram" class="w-full h-full object-contain">
                         </a>
-                        <!-- LinkedIn Icon without CSS filter so original blue/white image renders -->
+                        <!-- LinkedIn Icon fixed (no invert filter) -->
                         <a href="https://www.linkedin.com/in/marsit/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/20 transition-colors p-2">
                             <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/icons8-linkedin-480.png" alt="LinkedIn" class="w-full h-full object-contain">
                         </a>
@@ -822,15 +832,19 @@
             document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
         });
 
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle logic
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
         let menuOpen = false;
 
         function closeMenu() {
             menuOpen = false;
             mobileMenu.classList.remove('mobile-menu-active');
+            menuIconOpen.classList.remove('hidden');
+            menuIconClose.classList.add('hidden');
             document.body.style.overflow = '';
         }
 
@@ -838,6 +852,8 @@
             menuOpen = !menuOpen;
             if(menuOpen) {
                 mobileMenu.classList.add('mobile-menu-active');
+                menuIconOpen.classList.add('hidden');
+                menuIconClose.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
             } else {
                 closeMenu();
